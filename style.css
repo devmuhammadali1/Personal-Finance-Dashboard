@@ -1,0 +1,425 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1.2px;
+}
+body {
+  background-color: #353535;
+  color: #ffffff;
+  line-height: 1.6;
+}
+header {
+  width: 100%;
+  height: 91px;
+  background-color: #6200ea;
+  font-size: 1.334rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.dashboard.bs-enabled {
+  display: block;
+  width: 100%;
+}
+
+/* Fix for chart containers */
+.dashboard.bs-enabled .chart {
+  height: 400px; /* Adjust as needed */
+}
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 18px;
+  padding: 16px;
+  & section {
+    background-color: #000;
+    padding: 13px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  & h2 {
+    margin-bottom: 23px;
+  }
+}
+.form-section {
+  width: auto; /* Default to auto width */
+  transition: all 0.3s ease;
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  & label {
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  & .same-measure {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-image: initial;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  & button {
+    width: 100%;
+    background-color: rgb(98, 0, 234);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    border-style: none;
+  }
+}
+.value-amount::placeholder {
+  color: #ff0000;
+  font-size: 0.9rem;
+}
+.value-amount::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.trans-tab {
+  background-color: #353535;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.main-grid {
+  height: 42rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  padding-top: 0px !important;
+  padding: 12px;
+  overflow: auto;
+  & > div {
+    display: flex;
+    justify-content: space-between;
+  }
+  & .type-box{
+    position: relative;
+  }
+  & .info-type {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(98, 0, 234);
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 2px 3px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    border-style: none;
+    margin-top: 3px;
+  }
+  & .popup{
+    border-radius: 8px;
+    background-color: #353535;
+    width: fit-content;
+    padding: 4px;
+    border-style: none;
+position: absolute;
+left: 73px;
+background-color: #6200ea;
+display: none;
+& .closeBtn{
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  font-size: 0.9rem;
+  color: #6200ea;
+  cursor: pointer;
+}
+& .style{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  & span{
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  & .js-style{
+    color: #6200ea;
+  }
+}
+  }
+  & .date {
+    margin-right: 40px;
+    margin-top: 4px;
+  }
+  & .same-b {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+    margin-top: 4px;
+  }
+  & .date-box {
+    padding-left: 2rem;
+  }
+  & .action-box {
+    height: fit-content;
+    background-color: rgb(98, 0, 234);
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    border-style: none;
+    margin-top: 4px;
+  }
+  & button:hover {
+    background-color: #3700b3;
+  }
+}
+& button:hover {
+  background-color: #3700b3;
+}
+.datasec {
+  width: 100%;
+}
+.balance-section {
+  display: flex;
+  /* grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); */
+  flex-wrap: wrap;
+  gap: 1.3rem;
+  & div {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1; /* flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
+  /* min-width: 180px */
+
+    place-items: anchor-center;
+    /* margin-top: 6px; */
+  }
+  & p {
+    font-size: 0.9rem;
+    color: #666;
+    width: 124px;
+  }
+  & h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 5px;
+  }
+}
+.charts {
+  & h3 {
+    margin: 12px 0px 4px 0px;
+  }
+  & .chart {
+    background: #1e1e1e;
+    width: 100%;
+    height: 420px;
+    border-radius: 8px;
+    text-align: center;
+    color: #ff0d0d;
+    place-items: center;
+  }
+  & .expen-incm--chart {
+    width: fit-content;
+    height: auto;
+  }
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+  & #pie-chart {
+    padding: 12px;
+    cursor: pointer;
+  }
+  #bar-chart {
+    height: auto;
+  }
+}
+.rates {
+  & h3 {
+    margin-top: 16px;
+  }
+  & .base-div {
+    width: 100%;
+    height: 92px;
+    margin: 10px 0px 8px 0px;
+    background: #1e1e1e;
+    padding: 4px 0px 0px 8px;
+    border-radius: 8px;
+    color: #666;
+  }
+  & .currencies-div {
+    margin-top: 8px;
+  }
+  & .same-style {
+    width: 20%;
+    font-size: 1rem;
+    padding: 10px 25px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-image: initial;
+    border-radius: 4px;
+    cursor: pointer;
+    & option {
+      cursor: pointer;
+    }
+  }
+  & input::placeholder {
+    color: #ddd;
+  }
+  & .converted-amount {
+    width: 10%;
+    border: 1px solid rgb(204, 204, 204);
+    display: inline;
+    border-radius: 4px;
+    padding: 5px;
+    color: #ffffff;
+    & img {
+      width: 30px;
+      vertical-align: middle;
+    }
+  }
+  & button {
+    width: 15%;
+    background-color: rgb(98, 0, 234);
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 7px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    border-style: none;
+  }
+  & button:hover {
+    background-color: #3700b3;
+  }
+  & .crypto-base-div {
+    height: auto;
+  }
+  & .crypto-prices {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding-bottom: 10px;
+  }
+  & #crypto-search {
+    padding: 4px;
+    width: 30%;
+    margin-top: 8px;
+  }
+  & .search {
+    height: 30px;
+    width: 46px;
+    margin-top: 9px;
+    display: flex;
+    align-items: center;
+    & img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  .crypto-data {
+    border: 1px solid rgb(204, 204, 204);
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 9px;
+  }
+  & span {
+    color: #ddd;
+  }
+  & .loading {
+    display: none;
+    margin-top: 9px;
+    & img {
+      width: 34px;
+      height: inherit;
+    }
+  }
+}
+footer {
+  background-color: #6200ea;
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* ===== RESPONSIVE OVERRIDES ===== */
+
+@media(width<=500px){
+  .balance-section {
+    display: initial;
+    & div {
+      place-items: anchor-center;
+      margin-top: 6px;
+    }
+}
+.charts {
+  & .expen-incm--chart {
+      width: initial;
+      /* height: auto; */
+  }
+ & #bar-chart {
+    width: -webkit-fill-available;
+  }
+}
+.dashboard {
+padding: 0;
+}
+.main-grid{
+  height: 23rem;
+}
+.rates{
+  & .base-div{
+    height: auto;
+  }
+  & button{
+    width: auto;
+  }
+  & .same-style{
+    padding: 10px 0px;
+  }
+}
+.currencies-div{
+  & input::placeholder{
+    font-size: 0.8rem;
+    /* padding-left: 2px; */
+    text-align: center;
+
+  }
+}
+footer{
+  margin-top: 0;
+  border-radius: 15px;
+  padding: 4px;
+}
+
+}
